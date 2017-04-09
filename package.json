@@ -1,0 +1,36 @@
+{
+  "name": "funnel-starter",
+  "version": "0.0.1",
+  "description": "Boiler plate for Funnel",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/funkia/funnel-starter.git"
+  },
+  "keywords": [
+    "funnel",
+    "starter",
+    "boilerplate"
+  ],
+  "author": "Funkia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/funkia/funnel-starter/issues"
+  },
+  "homepage": "https://github.com/funkia/funnel-starter#readme",
+  "dependencies": {
+    "@funkia/funnel": "0.0.9",
+    "hareactive": "0.0.16",
+    "jabz": "0.0.18"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.1.2",
+    "typescript": "^2.3.0-dev.20170407",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
+  }
+}

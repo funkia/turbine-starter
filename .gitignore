@@ -1,0 +1,10 @@
+*.log
+bundle.js
+*.map
+node_modules/
+*~
+.tern-port
+.#*
+dist/
+coverage/
+.vscode
