@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build-prod": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -23,13 +24,13 @@
   },
   "homepage": "https://github.com/funkia/funnel-starter#readme",
   "dependencies": {
-    "@funkia/funnel": "0.0.9",
-    "hareactive": "0.0.16",
-    "jabz": "0.0.18"
+    "@funkia/funnel": "0.0.11",
+    "@funkia/hareactive": "0.0.19",
+    "@funkia/jabz": "0.0.19"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.1.2",
-    "typescript": "^2.3.0-dev.20170407",
+    "typescript": "^2.3.0",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"
   }

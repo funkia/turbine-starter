@@ -1,8 +1,8 @@
 # Funnel starter
 
-Funnel starter using TypeScript and Webpack.
+Funnel starter kit using TypeScript and Webpack.
 
-## Get started
+## Get it
 
 Get what you need.
 
@@ -12,6 +12,8 @@ cd my-funnel-project
 npm install
 ```
 
+## Usage
+
 Start the development server.
 
 ```
@@ -20,3 +22,9 @@ npm start
 
 This will start the webpack development server and open the webapp in
 your default browser.
+
+```
+npm run build-prod
+```
+
+Will create a minified bundle for production usage.

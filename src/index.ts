@@ -1,18 +1,43 @@
-import {map, go} from "jabz";
-import {runMain, elements} from "@funkia/funnel";
-const {span, input, div, h1} = elements;
+import { go, combine } from "@funkia/jabz";
+import { runComponent, elements, modelView } from "@funkia/funnel";
+import { Stream, sample, scan } from "@funkia/hareactive";
+const { p, div, h1, button } = elements;
 
-const isValidEmail = (s: string) => s.match(/.+@.+\..+/i);
+type ViewInput = {
+  count: Behavior<number>
+};
 
-const main = go(function*() {
-  yield h1("Hello, World!")
-  yield span("Please enter an email address: ");
-  const {inputValue: email} = yield input();
-  const isValid = map(isValidEmail, email);
-  yield div([
-    "The address is ", map((b) => b ? "valid" : "invalid", isValid)
-  ]);
+function counterView({ count }: ViewInput) {
+  return div([
+    button({ output: { incrementClick: "click" } }, " + "),
+    " ",
+    count,
+    " ",
+    button({ output: { decrementClick: "click" } }, " - ")
+  ]).map(({ incrementClick, decrementClick }) => ({
+    increment: incrementClick.mapTo(1),
+    decrement: decrementClick.mapTo(-1)
+  }));
+}
+
+type ModelInput = {
+  increment: Stream<number>,
+  decrement: Stream<number>
+};
+
+function* counterModel({ increment, decrement }: ModelInput) {
+  const count = yield sample(scan((n, m) => n + m, 0, combine(increment, decrement)));
+  return [{ count }, {}];
+}
+
+const counter = modelView<ViewInput, ModelInput, {}>(
+  counterModel, counterView
+);
+
+const main = go(function* () {
+  yield h1("Hello, World!");
+  yield p("Below is a counter.");
+  yield counter;
 });
 
-// `runMain` should be the only impure function in application code
-runMain("#mount", main);
+runComponent("#mount", main);
