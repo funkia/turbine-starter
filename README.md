@@ -1,14 +1,14 @@
-# Funnel starter
+# Turbine starter
 
-Funnel starter kit using TypeScript and Webpack.
+Turbine starter kit using TypeScript and Webpack.
 
 ## Get it
 
 Get what you need.
 
 ```
-git clone https://github.com/funkia/funnel-starter my-funnel-project
-cd my-funnel-project
+git clone https://github.com/funkia/turbine-starter my-turbine-project
+cd my-turbine-project
 npm install
 ```
 
