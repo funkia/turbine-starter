@@ -9,7 +9,7 @@ type ViewInput = {
 
 function* counterModel({ increment, decrement }: ModelInput) {
   const count = yield sample(scan((n, m) => n + m, 0, combine(increment, decrement)));
-  return [{ count }, {}];
+  return { count };
 }
 
 function counterView({ count }: ViewInput) {
@@ -30,9 +30,7 @@ type ModelInput = {
   decrement: Stream<number>
 };
 
-const counter = modelView<ViewInput, ModelInput, {}>(
-  counterModel, counterView
-);
+const counter = modelView(counterModel, counterView);
 
 const main = go(function* () {
   yield h1("Welcome to the Turbine starter kit!");

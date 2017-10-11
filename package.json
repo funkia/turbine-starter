@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/funkia/turbine-starter#readme",
   "dependencies": {
-    "@funkia/turbine": "0.0.13",
-    "@funkia/hareactive": "0.0.30",
-    "@funkia/jabz": "0.0.19"
+    "@funkia/hareactive": "^0.1.1",
+    "@funkia/jabz": "0.0.22",
+    "@funkia/turbine": "^0.1.0"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.1.3",
