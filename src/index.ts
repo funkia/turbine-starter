@@ -4,11 +4,13 @@ import { Behavior, Stream, sample, scan } from "@funkia/hareactive";
 const { p, div, h1, button } = elements;
 
 type ViewInput = {
-  count: Behavior<number>
+  count: Behavior<number>;
 };
 
 function* counterModel({ increment, decrement }: ModelInput) {
-  const count = yield sample(scan((n, m) => n + m, 0, combine(increment, decrement)));
+  const count = yield sample(
+    scan((n, m) => n + m, 0, combine(increment, decrement))
+  );
   return { count };
 }
 
@@ -26,13 +28,13 @@ function counterView({ count }: ViewInput) {
 }
 
 type ModelInput = {
-  increment: Stream<number>,
-  decrement: Stream<number>
+  increment: Stream<number>;
+  decrement: Stream<number>;
 };
 
 const counter = modelView(counterModel, counterView);
 
-const main = go(function* () {
+const main = go(function*() {
   yield h1("Welcome to the Turbine starter kit!");
   yield p("Below is a counter.");
   yield counter();
