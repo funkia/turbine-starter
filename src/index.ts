@@ -19,7 +19,7 @@ function counterView({ count }: ViewInput) {
     count,
     " ",
     button({ output: { decrementClick: "click" } }, " - ")
-  ]).map(({ incrementClick, decrementClick }) => ({
+  ]).output(({ incrementClick, decrementClick }) => ({
     increment: incrementClick.mapTo(1),
     decrement: decrementClick.mapTo(-1)
   }));

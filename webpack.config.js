@@ -1,6 +1,7 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
+  mode: "development",
   entry: "./src/index.ts",
   output: {
     path: __dirname,
@@ -12,7 +13,10 @@ module.exports = {
   },
   module: {
     rules: [
-      {test: /\.ts$/, exclude: /node_modules/, use: 'awesome-typescript-loader'}
+      {
+        test: /\.ts$/,
+        use: "awesome-typescript-loader"
+      }
     ]
   }
 };
