@@ -26,12 +26,12 @@
   "dependencies": {
     "@funkia/hareactive": "^0.2.3",
     "@funkia/jabz": "0.0.24",
-    "@funkia/turbine": "^0.1.8"
+    "@funkia/turbine": "file:../turbine"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
-    "typescript": "^3.1.6",
-    "webpack": "^4.26.1",
+    "typescript": "^3.2.1",
+    "webpack": "^4.27.0",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   }

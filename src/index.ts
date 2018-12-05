@@ -16,11 +16,11 @@ function* counterModel({ increment, decrement }: ModelInput) {
 
 function counterView({ count }: ViewInput) {
   return div([
-    button({ output: { incrementClick: "click" } }, " + "),
+    button(" + ").output({ incrementClick: "click" }),
     " ",
     count,
     " ",
-    button({ output: { decrementClick: "click" } }, " - ")
+    button(" - ").output({ decrementClick: "click" })
   ]).output(({ incrementClick, decrementClick }) => ({
     increment: incrementClick.mapTo(1),
     decrement: decrementClick.mapTo(-1)
