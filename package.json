@@ -26,7 +26,7 @@
   "dependencies": {
     "@funkia/hareactive": "^0.2.3",
     "@funkia/jabz": "0.0.24",
-    "@funkia/turbine": "file:../turbine"
+    "@funkia/turbine": "0.2.0"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
